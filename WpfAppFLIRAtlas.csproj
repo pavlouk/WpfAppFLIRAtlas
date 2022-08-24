@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Caliburn.Micro" Version="4.0.210" />
+    <PackageReference Include="Caliburn.Micro.Core" Version="4.0.210" />
+    <PackageReference Include="Emgu.CV" Version="4.5.5.4823" />
+    <PackageReference Include="Flir.Atlas.Cronos" Version="7.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Flir.Atlas.Image">
+      <HintPath>..\..\..\..\..\Program Files\FLIR\FLIR Thermal Studio\Flir.Atlas.Image.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
