@@ -10,8 +10,8 @@ namespace WpfAppFLIRAtlas.ViewModels
 {
     public class SecondChildViewModel : Screen
     {
-        private string _firstName = "Haridimos";
-        private string _lastName = "Fatseas";
+        private string _firstName = "Tolis";
+        private string _lastName = "Voskopoulos";
         private PersonModel _selectedPerson;
         private BindableCollection<PersonModel> _people = new BindableCollection<PersonModel>();
         
@@ -63,6 +63,19 @@ namespace WpfAppFLIRAtlas.ViewModels
             }
         }
 
+        public PersonModel SelectedPerson
+        {
+            get
+            {
+                return _selectedPerson;
+            }
+            set
+            {
+                _selectedPerson = value;
+                NotifyOfPropertyChange(nameof(SelectedPerson));
+            }
+        }
+
         public BindableCollection<PersonModel> People
         {
             get 
@@ -74,20 +87,7 @@ namespace WpfAppFLIRAtlas.ViewModels
                 _people = value; 
             }
         }
-
-        public PersonModel SelectedPerson
-        {
-            get 
-            { 
-                return _selectedPerson; 
-            }
-            set
-            {
-                _selectedPerson = value;
-                NotifyOfPropertyChange(nameof(SelectedPerson));
-            }
-        }
-
+                
         public bool CanClearText(string firstName, string lastName)
         {
             //return !String.IsNullOrEmpty(firstName) || !String.IsNullOrEmpty(lastName);

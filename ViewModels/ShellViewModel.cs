@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,10 +33,11 @@ namespace WpfAppFLIRAtlas.ViewModels
 				return _firstName; 
 			}
 			set 
-			{ 
+			{
+				Trace.WriteLine("First Name Changed");
 				_firstName = value;
-				NotifyOfPropertyChange(nameof(FirstName));
-                NotifyOfPropertyChange(nameof(FullName));
+				NotifyOfPropertyChange(() => FirstName);
+                NotifyOfPropertyChange(() => FullName);
 
             }
         }
@@ -47,10 +49,11 @@ namespace WpfAppFLIRAtlas.ViewModels
 				return _lastName; 
 			}
 			set 
-			{ 
-				_lastName = value; 
-				NotifyOfPropertyChange(nameof(LastName));
-                NotifyOfPropertyChange(nameof(FullName));
+			{
+				Trace.WriteLine("Last Name Changed");
+                _lastName = value; 
+				NotifyOfPropertyChange(() => LastName);
+                NotifyOfPropertyChange(() => FullName);
 
             }
         }
